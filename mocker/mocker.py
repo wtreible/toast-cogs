@@ -20,7 +20,7 @@ class Mocker(commands.Cog):
   @commands.command()
   async def mockthem(self, ctx):
     """A command that Spongebob mocks the previous message."""
-    if _check_if_reply(self, ctx.message):
+    if self._check_if_reply(ctx.message):
       msg = await ctx.channel.fetch_message(ctx.message.reference.message_id)
       await ctx.send(self._mock_string(msg.content.lower()))
     else:
