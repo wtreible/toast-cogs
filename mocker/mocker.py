@@ -12,12 +12,12 @@ class Mocker(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
   
-  @bot.command()
+  @commands.command()
   async def mockme(self, ctx, *args):
     """A command that sends the Spongebob Mocking meme text."""
     await ctx.send(self._mock_string(' '.join(args).lower()))
     
-  @bot.command()
+  @commands.command()
   async def mockthem(self, ctx):
     """A command that Spongebob mocks the previous message."""
     if _check_if_reply(self, ctx.message):
