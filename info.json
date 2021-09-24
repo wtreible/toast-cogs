@@ -1,0 +1,7 @@
+{
+	"author" : ["Toast119"],
+	"install_msg" : "Have a Toasty(TM) day.",
+	"name" : "Toast - discord_cogs",
+	"short" : "Miscellaneous cogs for ToastBot",
+	"description" : "Mostly a repo for custom ToastBot cogs."
+}
