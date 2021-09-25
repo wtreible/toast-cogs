@@ -15,12 +15,11 @@ class TPDNE(commands.Cog):
     self.bot = bot
     self.request_url = "https://thispersondoesnotexist.com/image"
     
-  @commands.command(alias=['tpdne', 'TPDNE'])
+  @commands.command(aliases=['tpdne', 'TPDNE'])
   async def thispersondoesnotexist(self, ctx, *args):
     """Uses an AI model to generate pictures of people who don't really exist."""
-    img_bytes = self.get_online_person()
-    img_fp = io.BytesIO(img_bytes)
-    embed_img = discord.File(img_fp, f"thispersondoesnotexist.jpg")
+    img_fp = io.BytesIO(self.get_online_person())
+    embed_img = discord.File(fp=img_fp, filename=f"thispersondoesnotexist.jpg")
     await ctx.send(file=embed_img)
 
   def get_online_person(self) -> bytes:
